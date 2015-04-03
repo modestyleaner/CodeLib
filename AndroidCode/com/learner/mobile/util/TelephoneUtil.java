@@ -474,4 +474,19 @@ public class TelephoneUtil {
 		StatFs statFs = new StatFs(Environment.getDataDirectory().getPath());
 		return statFs.getBlockSize() * statFs.getAvailableBlocks();
 	}
+	
+	
+	/**
+	 * 打开网络设置界面
+	 */
+	public static void openSetting(Context context)
+	{
+		Intent intent = new Intent("/");
+		ComponentName cm = new ComponentName("com.android.settings",
+				"com.android.settings.WirelessSettings");
+		intent.setComponent(cm);
+		intent.setAction("android.intent.action.VIEW");
+		context.startActivityForResult(intent, 0);
+	}
+
 }
