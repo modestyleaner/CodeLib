@@ -1,30 +1,30 @@
-AndroidÖĞµÄ¼¸ÖÖ¶¯»­ÀàĞÍ°üÀ¨ View Animation ,Drawable Animation,Property Animation . 
+ï»¿Androidä¸­çš„å‡ ç§åŠ¨ç”»ç±»å‹åŒ…æ‹¬ View Animation ,Drawable Animation,Property Animation . 
 
-ÏÂÃæÖ÷Òª½éÉÜProperty Animation :ÊôĞÔ¶¯»­ ¡£Í¨¹ı¶¯»­µÄ·½Ê½¸Ä±äviewµÄÊôĞÔ
-  Ïà¹ØµÄÀà£º
+ä¸‹é¢ä¸»è¦ä»‹ç»Property Animation :å±æ€§åŠ¨ç”» ã€‚é€šè¿‡åŠ¨ç”»çš„æ–¹å¼æ”¹å˜viewçš„å±æ€§
+  ç›¸å…³çš„ç±»ï¼š
     ValueAnimator	
-    ObjectAnimator   ¶ÔÏó¶¯»­
-	AnimatorSet     ¶¯»­¼¯ºÏ£¬¶¯»­¿ÉÒÔÉèÖÃ  ÏßĞÔµÄ£¬»òÕßÏÈºó¹ØÏµ
-	AnimatorInflater  ½øĞĞ¶¯»­ÎÄ¼şµÄ¼ÓÔØÀà¡£¶¯»­ÎÄ¼ş·ÅÖÃµÄÎ»ÖÃ£º /res/animator
-	TypeEvaluator    ÀàĞÍ¹ÀÖµ£¬Ö÷ÒªÓÃÓÚÔÚ»Øµ÷ÖĞÉèÖÃÊôĞÔµÄÖµ
-	TimeInterpllator Ê±¼ä²åÖµ£¬ÉèÖÃ¶¯»­Ğ§¹ûµÄ¼ÓËÙÆ÷
+    ObjectAnimator   å¯¹è±¡åŠ¨ç”»
+	AnimatorSet     åŠ¨ç”»é›†åˆï¼ŒåŠ¨ç”»å¯ä»¥è®¾ç½®  çº¿æ€§çš„ï¼Œæˆ–è€…å…ˆåå…³ç³»
+	AnimatorInflater  è¿›è¡ŒåŠ¨ç”»æ–‡ä»¶çš„åŠ è½½ç±»ã€‚åŠ¨ç”»æ–‡ä»¶æ”¾ç½®çš„ä½ç½®ï¼š /res/animator
+	TypeEvaluator    ç±»å‹ä¼°å€¼ï¼Œä¸»è¦ç”¨äºåœ¨å›è°ƒä¸­è®¾ç½®å±æ€§çš„å€¼
+	TimeInterpllator æ—¶é—´æ’å€¼ï¼Œè®¾ç½®åŠ¨ç”»æ•ˆæœçš„åŠ é€Ÿå™¨
  
   ----------------------------------------------------------------------
-   Ê×ÏÈ ObjectAnimatorµÄÊ¹ÓÃ
+   é¦–å…ˆ ObjectAnimatorçš„ä½¿ç”¨
     
-    ºËĞÄ´úÂë£º
+    æ ¸å¿ƒä»£ç ï¼š
     public void rorateAnimRun(View view){
-		ObjectAnimator.ofFloat(view,"rotationX",0.0f,360.0f) //Èç¹ûÖ»ÉèÖÃÒ»¸öÊôĞÔÖµ£¬Ôò´ú±í½áÊøÖµ£¬¿ªÊ¼Öµ£¬Í¨¹ı·´Éä½øĞĞ»ñÈ¡¡£Èç¹û2¸öÖµ£¬ÔòÒ»¸ö¿ªÊ¼£¬Ò»¸ö½áÊøÖµ
+		ObjectAnimator.ofFloat(view,"rotationX",0.0f,360.0f) //å¦‚æœåªè®¾ç½®ä¸€ä¸ªå±æ€§å€¼ï¼Œåˆ™ä»£è¡¨ç»“æŸå€¼ï¼Œå¼€å§‹å€¼ï¼Œé€šè¿‡åå°„è¿›è¡Œè·å–ã€‚å¦‚æœ2ä¸ªå€¼ï¼Œåˆ™ä¸€ä¸ªå¼€å§‹ï¼Œä¸€ä¸ªç»“æŸå€¼
 		              .setDuration(3000)
 					  .start();
 	}
  
-   ¶¯Ì¬¶ÔÊôĞÔÖµ½øĞĞÉèÖÃ£º
+   åŠ¨æ€å¯¹å±æ€§å€¼è¿›è¡Œè®¾ç½®ï¼š
    
    ainm.addUpdateListener(new AnimatorUpdateListener(){
 	
 		public void onAnimationUpdate(ValueAnimator animation){
-			float cVal = (Float) animation.getAnimatedValue();   //¶¯Ì¬»ñÈ¡ÊôĞÔµÄÖµ£¬È»ºó½øĞĞ¸³Öµ²Ù×÷
+			float cVal = (Float) animation.getAnimatedValue();   //åŠ¨æ€è·å–å±æ€§çš„å€¼ï¼Œç„¶åè¿›è¡Œèµ‹å€¼æ“ä½œ
             view.setAlpha(cVal);  
             view.setScaleX(cVal);  
             view.setScaleY(cVal); 
@@ -32,7 +32,7 @@ AndroidÖĞµÄ¼¸ÖÖ¶¯»­ÀàĞÍ°üÀ¨ View Animation ,Drawable Animation,Property Animatio
    });
  
   
-  //Ê¹ÓÃPropertyValuesHolder ½øĞĞ¶¯»­Ğ§¹ûµÄÉèÖÃ
+  //ä½¿ç”¨PropertyValuesHolder è¿›è¡ŒåŠ¨ç”»æ•ˆæœçš„è®¾ç½®
 	  public void propertyValuesHolder(View view){
 		PropertyValuesHolder pvhX =  PropertyValuesHolder.ofFloat("scaleX",1.0f,0.0f,1.0f);
 		PropertyValuesHolder pvhY =  PropertyValuesHolder.ofFloat("scaleY",1.0f,0.0f,1.0f);
@@ -60,4 +60,4 @@ AndroidÖĞµÄ¼¸ÖÖ¶¯»­ÀàĞÍ°üÀ¨ View Animation ,Drawable Animation,Property Animatio
  
  
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- ²Î¿¼²©¿Í£º http://blog.csdn.net/lmj623565791/article/details/38067475
+ å‚è€ƒåšå®¢ï¼š http://blog.csdn.net/lmj623565791/article/details/38067475
