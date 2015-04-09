@@ -1,0 +1,63 @@
+Android中的几种动画类型包括 View Animation ,Drawable Animation,Property Animation . 
+
+下面主要介绍Property Animation :属性动画 。通过动画的方式改变view的属性
+  相关的类：
+    ValueAnimator	
+    ObjectAnimator   对象动画
+	AnimatorSet     动画集合，动画可以设置  线性的，或者先后关系
+	AnimatorInflater  进行动画文件的加载类。动画文件放置的位置： /res/animator
+	TypeEvaluator    类型估值，主要用于在回调中设置属性的值
+	TimeInterpllator 时间插值，设置动画效果的加速器
+ 
+  ----------------------------------------------------------------------
+   首先 ObjectAnimator的使用
+    
+    核心代码：
+    public void rorateAnimRun(View view){
+		ObjectAnimator.ofFloat(view,"rotationX",0.0f,360.0f) //如果只设置一个属性值，则代表结束值，开始值，通过反射进行获取。如果2个值，则一个开始，一个结束值
+		              .setDuration(3000)
+					  .start();
+	}
+ 
+   动态对属性值进行设置：
+   
+   ainm.addUpdateListener(new AnimatorUpdateListener(){
+	
+		public void onAnimationUpdate(ValueAnimator animation){
+			float cVal = (Float) animation.getAnimatedValue();   //动态获取属性的值，然后进行赋值操作
+            view.setAlpha(cVal);  
+            view.setScaleX(cVal);  
+            view.setScaleY(cVal); 
+		}
+   });
+ 
+  
+  //使用PropertyValuesHolder 进行动画效果的设置
+	  public void propertyValuesHolder(View view){
+		PropertyValuesHolder pvhX =  PropertyValuesHolder.ofFloat("scaleX",1.0f,0.0f,1.0f);
+		PropertyValuesHolder pvhY =  PropertyValuesHolder.ofFloat("scaleY",1.0f,0.0f,1.0f);
+		PropertyValuesHolder pvhZ =  PropertyValuesHolder.ofFloat("alpha",1.0f,0.0f,1.0f);
+		ObjectAnimator.ofPropertyValuesHolder(view, pvhX,pvhY,pvhZ).setDuration(500).start();
+	  }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 参考博客： http://blog.csdn.net/lmj623565791/article/details/38067475
