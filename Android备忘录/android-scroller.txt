@@ -1,0 +1,49 @@
+﻿android Scroller 分析
+
+
+  首先
+    1  mScrollX， mScrollY，X轴方向的偏移量和Y轴方向的偏移量，这个是一个相对距离，相对的不是屏幕的原点，而是View的左边缘，
+	   向右滑动 mScrollX就为负数，向左滑动mScrollX为正数 。 View的 getScrollX() 
+ 
+   2  View 的scrollBy()和ScrollTo() 区别：
+   
+   /** 
+   * Set the scrolled position of your view. This will cause a call to 
+   * {@link #onScrollChanged(int, int, int, int)} and the view will be 
+   * invalidated. 
+   * @param x the x position to scroll to 
+   * @param y the y position to scroll to 
+   */  
+      public void scrollTo(int x, int y) {  
+        if (mScrollX != x || mScrollY != y) {  
+          int oldX = mScrollX;  
+          int oldY = mScrollY;  
+          mScrollX = x;  
+          mScrollY = y;  
+          onScrollChanged(mScrollX, mScrollY, oldX, oldY);  
+          if (!awakenScrollBars()) {  
+              invalidate();  
+          }  
+       }  
+     }  
+	 
+	 由代码可以知道：scrollTo()方法是滚动到(x, y)这个偏移量的点，他是相对于View的开始位置来滚动的
+    
+	/** 
+    * Move the scrolled position of your view. This will cause a call to 
+    * {@link #onScrollChanged(int, int, int, int)} and the view will be 
+    * invalidated. 
+    * @param x the amount of pixels to scroll by horizontally 
+    * @param y the amount of pixels to scroll by vertically 
+    */  
+	 public void scrollBy(int x, int y) {  
+       scrollTo(mScrollX + x, mScrollY + y);  
+     } 
+   
+    3 Scroller类介绍：
+	   
+   
+   
+   
+   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   博客地址：http://blog.csdn.net/xiaanming/article/details/17483273
