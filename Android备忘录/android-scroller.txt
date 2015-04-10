@@ -40,10 +40,27 @@
        scrollTo(mScrollX + x, mScrollY + y);  
      } 
    
-    3 Scroller类介绍：
+    3 Scroller类介绍
+	
+	4 使用Scroller实现ListView的左右滑动删除item效果。
+	   思路：　首先根据手指触摸的点，判断滑动的是哪个item
+	           手指在屏幕中滑动，利用scrollby()方法进行滑动
+			   手指放开时，根据滑动的距离，判断是否滑出屏幕，或者回到原位置
+	   　　　
 	   
    
    
    
    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    博客地址：http://blog.csdn.net/xiaanming/article/details/17483273
+             http://blog.csdn.net/xiaanming/article/details/17539199
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
