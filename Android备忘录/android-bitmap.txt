@@ -1,0 +1,29 @@
+﻿Android  高效加载大图
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+参考网页  ： http://hukai.me/android-training-course-in-chinese/graphics/displaying-bitmaps/load-bitmap.html
