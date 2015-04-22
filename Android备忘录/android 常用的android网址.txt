@@ -1,0 +1,153 @@
+﻿
+android 源码网址:
+http://grepcode.com/project/repository.grepcode.com/java/ext/com.google.android/android/
+
+github上的源码：https://github.com/android/platform_frameworks_base/tree/master/libs/usb
+
+论坛：
+
+　　安卓巴士（挺著名的一个论坛）：http://www.apkbus.com/
+
+　　很多很有用的资料哇。。
+
+ 
+
+　　eoe社区：
+
+　　http://www.eoeandroid.com/
+
+ 　　【eoeAndroid社区索引】最新最全Android各大类知识汇总贴:http://www.eoeandroid.com/thread-252177-1-1.html
+
+ 
+
+　　Android开发系列教程集合： http://dev.apkbus.com/
+
+　　神贴集合：http://www.apkbus.com/android-19658-1-1.html
+
+ 
+个人博客：
+
+　　Android详细教程（基础篇）：http://www.cnblogs.com/aimeng/archive/2012/10/31/2748428.html
+
+　　（这个作者的Android目录目前是138篇。。.-_-||）
+
+　　（后来我才发现。。这个博主是安卓巴士的站长。。。站长。。长。。）
+
+　　入门合辑：http://www.cnblogs.com/aimeng/archive/2012/03/09/2387509.html
+
+　　
+
+　　
+基础
+
+　　书籍和教程推荐：
+
+　　http://www.cnblogs.com/aimeng/archive/2011/09/05/2167979.html
+
+　　http://www.cnblogs.com/aimeng/archive/2011/10/30/2229554.html
+
+　　http://www.cnblogs.com/aimeng/archive/2012/01/12/2320993.html
+
+　　http://www.cnblogs.com/aimeng/archive/2012/03/24/2415900.html
+
+　　http://www.cnblogs.com/aimeng/archive/2012/06/18/2553150.html
+
+　　http://www.cnblogs.com/aimeng/archive/2012/08/02/2619522.html
+
+ 
+
+　　用户界面教程：
+
+　　http://www.cnblogs.com/aimeng/archive/2012/06/26/2563762.html 
+
+　　提高篇：
+
+　　http://www.cnblogs.com/aimeng/archive/2012/06/19/2555210.html
+
+　　核心分析28篇：
+
+　　http://www.cnblogs.com/aimeng/archive/2012/03/17/2403298.html
+
+　　这个作者推荐的Android源码：
+
+　　http://www.cnblogs.com/aimeng/archive/2012/08/17/2644487.html
+
+　　经典游戏源码汇总：http://www.cnblogs.com/aimeng/archive/2012/09/24/2700488.html
+
+　　游戏代码：http://www.cnblogs.com/aimeng/archive/2012/06/02/2531751.html
+
+　　经典源码下载：http://demo.apkbus.com/
+
+　　十五个Android开发实例：http://www.cnblogs.com/aimeng/archive/2012/03/28/2422435.html
+
+　　关于Adapter的使用：http://www.cnblogs.com/devinzhang/archive/2012/01/20/2328334.html
+
+ 
+
+　　Android开发从入门到精通：http://android.apkbus.com/
+
+　　http://www.cnblogs.com/linzheng/tag/android/default.html?page=1 
+
+　　（看见搞XNA的人总是倍感亲切。。）
+
+　　又是一个Android学习的博客：
+
+　　http://www.cnblogs.com/fly_binbin/category/270864.html
+
+　　
+
+　　关于Activity的启动模式：http://marshal.easymorse.com/archives/2950 
+音频相关：
+
+　　AudioTrack学习：http://www.rosoo.net/a/201204/15897.html
+
+　　Android音频相关很强的一个博客，有很多底层的讨论，博文中有很多代码，但是排版做得不是很好（抱歉哈），所以可读性不是很好。
+
+　　http://blog.csdn.net/hgl868/article/category/884128
+
+　　关于AudioTrack的使用，找到了这个博客：
+
+　　http://blog.csdn.net/conowen/article/details/7727145
+
+　　http://blog.csdn.net/conowen/article/details/7799155
+
+　　使用AudioTrack播放PCM音频数据：http://www.rosoo.net/a/201201/15580.html
+
+ 
+NDK相关：
+
+　　NDK 编译和使用静态库、动态库：http://www.rosoo.net/a/201302/16514.html
+
+　　Android.mk的用法|静态库|动态库: http://www.rosoo.net/a/201206/16108.html
+
+ 
+调试相关：
+
+　　Android真机调试方法：http://www.rosoo.net/a/201205/16033.html
+
+ 
+
+ 
+资源图片相关：
+
+　　android内置图标资源：http://docs.since2006.com/android/2.1-drawables.php
+
+　　android内置图标资源：http://www.darshancomputing.com/android/1.5-drawables.html
+
+　　免费的地图图标资源：http://mapicons.nicolasmollet.com/
+
+ 
+ 关于View绘制及尺寸的分析：
+
+　　Android中View绘制流程以及invalidate()等相关方法分析
+
+　　Android中measure过程、WRAP_CONTENT详解以及xml布局文件解析流程浅析(上)
+
+　　Android中measure过程、WRAP_CONTENT详解以及xml布局文件解析流程浅析(下)
+
+ 
+OAuth认证相关　
+
+　　OAuth官网： http://oauth.net/
+
+　　开源项目oauth-signpost： http://code.google.com/p/oauth-signpost/
