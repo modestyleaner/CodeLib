@@ -1,0 +1,96 @@
+﻿
+ //启动一个网页：
+ Uri uri = Uri.parse("http://google.cn");
+ Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+ startActivity(intent);
+ 
+ //打电话
+  1. //叫出拨号程序 
+   2. Uri uri = Uri.parse("tel:0800000123"); 
+   3. Intent it = new Intent(Intent.ACTION_DIAL, uri); 
+   4. startActivity(it); 
+   1. //直接打电话出去 
+   2. Uri uri = Uri.parse("tel:0800000123"); 
+   3. Intent it = new Intent(Intent.ACTION_CALL, uri); 
+   4. startActivity(it); 
+   5. //用這個，要在 AndroidManifest.xml 中，加上 
+   6. //<uses-permission id="android.permission.CALL_PHONE" /> 
+
+传送SMS/MMS
+   1. //调用短信程序 
+   2. Intent it = new Intent(Intent.ACTION_VIEW, uri); 
+   3. it.putExtra("sms_body", "The SMS text");  
+   4. it.setType("vnd.android-dir/mms-sms"); 
+   5. startActivity(it);
+   1. //传送消息 
+   2. Uri uri = Uri.parse("smsto://0800000123"); 
+   3. Intent it = new Intent(Intent.ACTION_SENDTO, uri); 
+   4. it.putExtra("sms_body", "The SMS text"); 
+   5. startActivity(it);
+   1. //传送 MMS 
+   2. Uri uri = Uri.parse("content://media/external/images/media/23"); 
+   3. Intent it = new Intent(Intent.ACTION_SEND);  
+   4. it.putExtra("sms_body", "some text");  
+   5. it.putExtra(Intent.EXTRA_STREAM, uri); 
+   6. it.setType("image/png");  
+   7. startActivity(it); 
+
+传送 Email
+   1. Uri uri = Uri.parse("mailto:xxx@abc.com"); 
+   2. Intent it = new Intent(Intent.ACTION_SENDTO, uri); 
+   3. startActivity(it); 
+
+
+   1. Intent it = new Intent(Intent.ACTION_SEND); 
+   2. it.putExtra(Intent.EXTRA_EMAIL, "me@abc.com"); 
+   3. it.putExtra(Intent.EXTRA_TEXT, "The email body text"); 
+   4. it.setType("text/plain"); 
+   5. startActivity(Intent.createChooser(it, "Choose Email Client")); 
+
+
+   1. Intent it=new Intent(Intent.ACTION_SEND);   
+   2. String[] tos={"me@abc.com"};   
+   3. String[] ccs={"you@abc.com"};   
+   4. it.putExtra(Intent.EXTRA_EMAIL, tos);   
+   5. it.putExtra(Intent.EXTRA_CC, ccs);   
+   6. it.putExtra(Intent.EXTRA_TEXT, "The email body text");   
+   7. it.putExtra(Intent.EXTRA_SUBJECT, "The email subject text");   
+   8. it.setType("message/rfc822");   
+   9. startActivity(Intent.createChooser(it, "Choose Email Client"));
+
+
+   1. //传送附件
+   2. Intent it = new Intent(Intent.ACTION_SEND); 
+   3. it.putExtra(Intent.EXTRA_SUBJECT, "The email subject text"); 
+   4. it.putExtra(Intent.EXTRA_STREAM, "file:///sdcard/mysong.mp3"); 
+   5. sendIntent.setType("audio/mp3"); 
+   6. startActivity(Intent.createChooser(it, "Choose Email Client"));
+
+播放多媒体
+       Uri uri = Uri.parse("file:///sdcard/song.mp3"); 
+       Intent it = new Intent(Intent.ACTION_VIEW, uri); 
+       it.setType("audio/mp3"); 
+       startActivity(it);
+       Uri uri = Uri.withAppendedPath(MediaStore.Audio.Media.INTERNAL_CONTENT_URI, "1"); 
+       Intent it = new Intent(Intent.ACTION_VIEW, uri); 
+       startActivity(it);
+
+Market 相关
+1.        //寻找某个应用
+2.        Uri uri = Uri.parse("market://search?q=pname:pkg_name");
+3.        Intent it = new Intent(Intent.ACTION_VIEW, uri); 
+4.        startActivity(it); 
+5.        //where pkg_name is the full package path for an application
+1.        //显示某个应用的相关信息
+2.        Uri uri = Uri.parse("market://details?id=app_id"); 
+3.        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+4.        startActivity(it); 
+5.        //where app_id is the application ID, find the ID  
+6.        //by clicking on your application on Market home  
+7.        //page, and notice the ID from the address bar
+
+Uninstall 应用程序
+1.        Uri uri = Uri.fromParts("package", strPackageName, null);
+2.        Intent it = new Intent(Intent.ACTION_DELETE, uri);  
+3.        startActivity(it);  
+ 
