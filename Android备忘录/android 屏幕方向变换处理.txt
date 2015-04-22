@@ -1,0 +1,79 @@
+﻿android 在屏幕显示的方向切换
+   android:screenOrientation  和 android:configChanges
+   
+   
+   
+   1 可以利用 android:screenOrientation 属性强制锁定屏幕方向：
+   
+   android:screenOrientation="sensor"
+   android:configChanges="orientation|keyboardHidden|screenSize"
+   
+   
+   在Activity中
+   //该方法只有在配置文件中声明了 configChanges，且screenOrientation 属性设置为屏幕可以变化时，才会触发，否则不会触发
+     @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+ 
+        // Checks the orientation of the screen for landscape and portrait and set portrait mode always
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+    }
+   
+   
+   注意：在切换屏幕时，如果不设置configChanges属性，那么activity会销毁并重新实例化。
+   
+   
+   2 动态的获取屏幕的方向
+      public void getScreenOrientation(){
+	    	Display display = ((WindowManager)getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+	    	int orientation = display.getOrientation() ;
+	    	switch(orientation) {
+	            case Configuration.ORIENTATION_PORTRAIT:
+	                setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+	                break;
+	            case Configuration.ORIENTATION_LANDSCAPE:
+	                setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	                break; 
+	            default:
+	            	break;
+	        }
+	}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   android 屏幕的状态是以下的值之一：
+    
+
+	ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+
+	ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+
+	ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+	ActivityInfo.SCREEN_ORIENTATION_USER
+
+	ActivityInfo.SCREEN_ORIENTATION_BEHIND
+
+	ActivityInfo.SCREEN_ORIENTATION_SENSOR
+
+	ActivityInfo.SCREEN_ORIENTATION_NOSENSOR
+
+	ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+
+	ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
+
+	ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE
+
+	ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT
+
+	ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
