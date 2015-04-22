@@ -1,7 +1,7 @@
-Android back¼üºÍhome¼üµÄ¼àÌý
+ï»¿Android backé”®å’Œhomeé”®çš„ç›‘å¬
 
 
-  Back¼üµÄ¼àÌý£º¿ÉÒÔÔÚÏµÍ³¶à¸ö»Øµ÷´¦½øÐÐÀ¹½Ø¡£ÈçActivityµÄÈçÏÂ»Øµ÷ÖÐ¿ÉÒÔ¶ÔBack¼ü½øÐÐÀ¹½Ø£º
+  Backé”®çš„ç›‘å¬ï¼šå¯ä»¥åœ¨ç³»ç»Ÿå¤šä¸ªå›žè°ƒå¤„è¿›è¡Œæ‹¦æˆªã€‚å¦‚Activityçš„å¦‚ä¸‹å›žè°ƒä¸­å¯ä»¥å¯¹Backé”®è¿›è¡Œæ‹¦æˆªï¼š
   
   @Override
 	public void onBackPressed() {
@@ -30,11 +30,11 @@ Android back¼üºÍhome¼üµÄ¼àÌý
             break;
         case KeyEvent.KEYCODE_HOME:
             Log.i(LOG_TAG, "KeyEvent.KEYCODE_HOME");
-            // ÊÕ²»µ½
+            // æ”¶ä¸åˆ°
             break;
         case KeyEvent.KEYCODE_APP_SWITCH:
             Log.i(LOG_TAG, "KeyEvent.KEYCODE_APP_SWITCH");
-            // ÊÕ²»µ½
+            // æ”¶ä¸åˆ°
             break;
         default:
             break;
@@ -46,10 +46,10 @@ Android back¼üºÍhome¼üµÄ¼àÌý
 	
 	
 	
-	Home¼üµÄ¼àÌý£º
-	¶ÔÓÚHome¼üµÄ¼àÌý²»ÊÇÄÇÃ´ÈÝÒ×,ÒòÎªHome¼ü¿ÉÒÔ½«³ÌÐòÍË³ö·ÅÔÚºóÌ¨,ËùÒÔÕâ¸öÊÂ¼þÊÇÖ±½Ó·Ö·¢¸øÏµÍ³,ÏµÍ³½ÓÊÕµ½Ö®ºó×öÏàÓ¦´¦Àí,Home¼üµÄÊÂ¼þ²»ÊÇÖ±½Ó´«µÝµ½Ó¦ÓÃÀïÃæ.ËùÒÔÔÚÉÏÊö¼àÌýBack¼üµÄ´úÂëÖÐ,ÏàÓ¦µÄ»Øµ÷ÖÐÊÇÊÕ²»µ½Home¼üµÄÊÂ¼þµÄ.
+	Homeé”®çš„ç›‘å¬ï¼š
+	å¯¹äºŽHomeé”®çš„ç›‘å¬ä¸æ˜¯é‚£ä¹ˆå®¹æ˜“,å› ä¸ºHomeé”®å¯ä»¥å°†ç¨‹åºé€€å‡ºæ”¾åœ¨åŽå°,æ‰€ä»¥è¿™ä¸ªäº‹ä»¶æ˜¯ç›´æŽ¥åˆ†å‘ç»™ç³»ç»Ÿ,ç³»ç»ŸæŽ¥æ”¶åˆ°ä¹‹åŽåšç›¸åº”å¤„ç†,Homeé”®çš„äº‹ä»¶ä¸æ˜¯ç›´æŽ¥ä¼ é€’åˆ°åº”ç”¨é‡Œé¢.æ‰€ä»¥åœ¨ä¸Šè¿°ç›‘å¬Backé”®çš„ä»£ç ä¸­,ç›¸åº”çš„å›žè°ƒä¸­æ˜¯æ”¶ä¸åˆ°Homeé”®çš„äº‹ä»¶çš„.
 
-¡¡¡¡²Î¿¼ÎÄºóµÄ²©¿ÍÁ´½Ó,¶ÔHome¼üµÄ¼àÌýÖ÷ÒªÍ¨¹ý×¢²á¹ã²¥½ÓÊÕÆ÷ÊµÏÖ,À¹½ØÈÃ´°¿Ú¹Ø±ÕµÄÏµÍ³¶¯×÷,È»ºó¸ù¾ÝIntentÀïÃæµÄ¾ßÌå²ÎÊý,·ÖÎöµ±Ç°µ½µ×ÊÇHome¼ü, Ó¦ÓÃÇÐ»»¼ü,»¹ÊÇÆäËû¹¦ÄÜ°´¼ü.
+ã€€ã€€å‚è€ƒæ–‡åŽçš„åšå®¢é“¾æŽ¥,å¯¹Homeé”®çš„ç›‘å¬ä¸»è¦é€šè¿‡æ³¨å†Œå¹¿æ’­æŽ¥æ”¶å™¨å®žçŽ°,æ‹¦æˆªè®©çª—å£å…³é—­çš„ç³»ç»ŸåŠ¨ä½œ,ç„¶åŽæ ¹æ®Intenté‡Œé¢çš„å…·ä½“å‚æ•°,åˆ†æžå½“å‰åˆ°åº•æ˜¯Homeé”®, åº”ç”¨åˆ‡æ¢é”®,è¿˜æ˜¯å…¶ä»–åŠŸèƒ½æŒ‰é”®.
 
 
 
