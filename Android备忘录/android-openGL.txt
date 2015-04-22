@@ -1,0 +1,60 @@
+Android back键和home键的监听
+
+
+  Back键的监听：可以在系统多个回调处进行拦截。如Activity的如下回调中可以对Back键进行拦截：
+  
+  @Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+	}
+	
+	
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		// TODO Auto-generated method stub
+		return super.dispatchKeyEvent(event);
+	}
+	
+	
+	 @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.i(LOG_TAG, "onKeyDown: keyCode -- " + keyCode);
+
+        switch (keyCode) {
+        case KeyEvent.KEYCODE_BACK:
+            Log.i(LOG_TAG, "KeyEvent.KEYCODE_BACK");
+            break;
+        case KeyEvent.KEYCODE_MENU:
+            Log.i(LOG_TAG, "KeyEvent.KEYCODE_MENU");
+            break;
+        case KeyEvent.KEYCODE_HOME:
+            Log.i(LOG_TAG, "KeyEvent.KEYCODE_HOME");
+            // 收不到
+            break;
+        case KeyEvent.KEYCODE_APP_SWITCH:
+            Log.i(LOG_TAG, "KeyEvent.KEYCODE_APP_SWITCH");
+            // 收不到
+            break;
+        default:
+            break;
+        }
+
+        return super.onKeyDown(keyCode, event);
+
+    }
+	
+	
+	
+	Home键的监听：
+	对于Home键的监听不是那么容易,因为Home键可以将程序退出放在后台,所以这个事件是直接分发给系统,系统接收到之后做相应处理,Home键的事件不是直接传递到应用里面.所以在上述监听Back键的代码中,相应的回调中是收不到Home键的事件的.
+
+　　参考文后的博客链接,对Home键的监听主要通过注册广播接收器实现,拦截让窗口关闭的系统动作,然后根据Intent里面的具体参数,分析当前到底是Home键, 应用切换键,还是其他功能按键.
+
+
+
+
+	
+	
+	
+		
