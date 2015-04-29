@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" >
+
+    <TextView
+        android:id="@+id/youmitag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dip"
+        android:text="@string/youmi"
+        android:textColor="#3baa24"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youmitag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dip"
+        android:text="@string/versionTxt"
+        android:textColor="#3baa24"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/showSpot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="80dip"
+        android:layout_marginRight="80dip"
+        android:background="@drawable/buttonbg"
+        android:text="@string/showSpot"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/showBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showSpot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dip"
+        android:layout_marginRight="80dip"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/buttonbg"
+        android:text="@string/showBanner"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dip"
+        android:text="@string/bottomTag"
+        android:textColor="#3baa24"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+</RelativeLayout>
