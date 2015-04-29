@@ -1,0 +1,164 @@
+﻿android app 常见的4中引导模式(Loading加载方式)
+
+  方式1 ： Splash方式
+   该方式在显示一个loading页面几秒钟后自动跳转到app主页。
+   
+    关键核心代码：
+	 
+	 private static final long DELAY_TIME　= 3000L ;
+	 
+	 private void redirectByTime(){
+		new Handler().postDelay(new Runnable(){
+			public void run(){
+				startActivity(this,HomeActivity.class);
+				AnimationUtils.finishActivityAnimation(SplashActivity.class);
+			}
+		},DELAY_TIME);
+	 }
+  
+	
+	/**
+	 * 退出Activity的动画 : zoom 动画
+	 * 
+	 * @param context
+	 */
+	public static void finishActivityAnimation(Context context) {
+		((Activity) context).finish();
+		((Activity) context).overridePendingTransition(R.anim.zoom_enter,
+				R.anim.zoom_exit);
+	}
+
+
+	方式2： Viewpager方式 ，当需要显示多个loading广告页面
+	  通过Activity + Fragment + ViewPager 进行实现
+	  
+	  
+	  
+	方式3： ViewFlipper 方式，也是需要显示多个不同展示页面时，可以使用ViewFlipper方式
+	  关键点：实现 OnGestureListener  ,对 onFling进行重写
+	
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+			float velocityY) {
+		if (e1.getX() > e2.getX()) {
+			mVFActivity.showNext();
+		} else if (e1.getX() < e2.getX()) {
+			mVFActivity.showPrevious();
+		} else {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		return mGestureDetector.onTouchEvent(event);
+	}
+	
+	
+	方式4 ： 自定义ScrollView ，通过scrollview方式进行显示
+	
+	public class ScollerViewActivity extends Activity implements
+		OnScrollChangedListener {
+	@ViewInject(R.id.ll_anim)
+	private LinearLayout mLLAnim;
+	private MyScrollView mSVmain;
+	private int mScrollViewHeight;
+	private int mStartAnimateTop;
+	private boolean hasStart = false;
+	@ViewInject(R.id.tvInNew)
+	private TextView tvInNew;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_scrollview);
+		ViewUtils.inject(this);
+		initView();
+		setView();
+	}
+
+	private void initView() {
+		mSVmain = (MyScrollView) findViewById(R.id.sv_main);
+		tvInNew.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(ScollerViewActivity.this,SuccessLaunchActivity.class));
+				AnimationUtil.finishActivityAnimation(ScollerViewActivity.this);
+			}
+		});
+	}
+
+	private void setView() {
+		mSVmain.setOnScrollChangedListener(this);
+		mLLAnim.setVisibility(View.INVISIBLE);
+	}
+
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+		super.onWindowFocusChanged(hasFocus);
+		mScrollViewHeight = mSVmain.getHeight();
+		mStartAnimateTop = mScrollViewHeight / 5 * 4;
+	}
+
+	@Override
+	public void onScrollChanged(int top, int oldTop) {
+		int animTop = mLLAnim.getTop() - top;// 
+		if (top > oldTop) {// 向下滑动
+			if (animTop < mStartAnimateTop && !hasStart) {// 
+				Animation anim = AnimationUtils
+						.loadAnimation(this, R.anim.show);
+				mLLAnim.setVisibility(View.VISIBLE);
+				mLLAnim.startAnimation(anim);
+				hasStart = true;
+			}
+		} else {// 向上滑动
+			if (animTop > mStartAnimateTop && hasStart) {
+				Animation anim = AnimationUtils.loadAnimation(this,
+						R.anim.close);
+				mLLAnim.setVisibility(View.INVISIBLE);
+				mLLAnim.startAnimation(anim);
+				hasStart = false;
+			}
+		}
+	}
+
+}
+
+
+
+public class MyScrollView extends ScrollView {
+	private OnScrollChangedListener onScrollChangedListener;
+
+	public MyScrollView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
+
+	public MyScrollView(Context context) {
+		super(context);
+	}
+
+	@Override
+	protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+		// l oldl 分别代表水平位移
+		// t oldt 代表当前左上角距离Scrollview顶点的距离
+		super.onScrollChanged(l, t, oldl, oldt);
+		if (this.onScrollChangedListener != null) {
+			onScrollChangedListener.onScrollChanged(t, oldt);
+		}
+	}
+
+	public void setOnScrollChangedListener(
+			OnScrollChangedListener onScrollChangedListener) {
+		this.onScrollChangedListener = onScrollChangedListener;
+	}
+
+}
+
+
+
+
+	
+	 
