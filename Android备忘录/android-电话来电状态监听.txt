@@ -1,0 +1,53 @@
+android 电话状态监听
+
+  主要通过PhoneStateListener 和 广播  进行状态变化的监听
+    主要涉及的类： TelephonyManger  PhoneStateListener 
+	
+	TelephonyManger 提供了获取手机基本服务信息的一种方式。通过服务的形式进行初始化。
+	
+	 TelephonyManger tm = (TelephonyManger)context.getSystemService(Context.TELEPHONY_SERVICE);
+	 
+	 需要在清单文件中声明权限：
+	<!-- 获取监听手机电话状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"></uses-permission> 
+	
+	主要的静态成员常量：
+	 int CALL_STATE_IDLE
+	 空闲状态，没有任何活动
+	 int CALL_STATE_OFFHOOK
+	  摘机状态，至少有个电话活动。该活动或是拨打（dialing）或是通话，或是 on hold。并且没有电话是ringing or waiting
+	 int CALL_STATE_RINGING 来电状态电话铃声响起的那段时间或正在通话又来新电，新来电话不得不等待的那段时间
+	 
+	  手机通话状态在广播中对应的值：
+	  EXTRA_STATE_IDLE 它在手机通话状态改变的广播中，用于表示CALL_STATE_IDLE状态
+	  EXTRA_STATE_OFFHOOK 它在手机通话状态改变的广播中，用于表示CALL_STATE_OFFHOOK状态
+	  EXTRA_STATE_RINGING 它在手机通话状态改变的广播中，用于表示CALL_STATE_RINGING状态
+	  	  
+	  ACTION_PHONE_STATE_CHANGED 在广播中用ACTION_PHONE_STATE_CHANGED这个Action来标示通话状态改变的广播（intent）。
+	 
+	  
+	 
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
