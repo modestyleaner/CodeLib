@@ -41,5 +41,11 @@
 			
 			from=1&to=2&amount=500.0
 			
+			playurl=http://218.25.249.202:8084/NASLABEL/51370/20140529/4c8ffb28c0a8040c01b7bf0e06f07f1d.mp4?userid=8600000000000&userip=218.24.44.81&spid=51287&pid=8091500701&cid=0005137014053022011032&subcontentid=0005137014053022011028&timestamp=20150526151215&life=3600&contenttype=1&preview=1&proxy=0&oma=0&chargeuserid=18600000000&subcontentsize=102&mimetype=video/mp4&mode=2&enkey=613AE489A2F51FF2403CE47BE21BF838
+			
+			
+			http://218.25.249.106:8084/NASLABEL/51370/20150420/d5c6f200c0a8040c00e9f0c04787e4e6.mp4?mimetype=video/mp4
+			
+			
 			
    

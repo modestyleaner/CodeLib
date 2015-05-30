@@ -1,0 +1,15 @@
+﻿android  50 common programing skills
+
+/*****************使用 weightNum 和 Layout_weight **********/
+	
+ 
+ 
+/*************使用include 和 viewStub *******************/
+	使用include标签在布局文件中，可以公用文件。
+	
+	<include   
+	  layout="@layout/footer"
+	  android:layout_height="wrap_content"
+	  android:layout_width="match_parent"/> 
+	  
+   
