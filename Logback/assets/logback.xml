@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="60 seconds">
+   
+    <property name="App_name" value="LogbackLearn"/>
+    <contextName>${APP_name}</contextName>
+    
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file >/data/data/com.learnercode.logback/files/log/foo.log</file>
+        <encoder>
+    		<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    
+    <appender name="logcat" class="ch.qos.logback.classic.android.LogcatAppender">
+        <encoder>
+    		<pattern>%msg</pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="com.learnercode.logback" />
+    
+    <root level="INFO">
+        <appender-ref ref="logcat"/>
+    </root>
+</configuration>
+
+
+
+ <!-- 
+    	Configuration 的属性:
+    	scan:
+			当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
+		scanPeriod:
+			设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
+		debug:
+			当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
+		----------------------------------------------------------------------------------------------------------	
+		logger :用来设置某一个包，或者某一个具体的类的打印级别，以及制定<appender>  
+		            属性有： name：用来制定约束的报名或者类名
+		              level: 用来设置打印级别，大小写无关 TRACE < DEBUG < INFO < WARN < ERROR 
+		              addtivity: 是否向上级loger传递打印信息，默认true
+		       <logger>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个logger。
+		------------------------------------------------------------------------------------------------------------   
+		<root>
+			也是<logger>元素，但是它是根logger。只有一个level属性，应为已经被命名为"root".
+		level:
+			用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，不能设置为INHERITED或者同义词NULL。
+			默认是DEBUG。
+			<root>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个logger。       
+	    --------------------------------------------------------------------------------------------------------------
+	    <appender> 负责写日志的组件
+	                              必要属性： name class
+	               FileAppender
+	               ConsoleAppender
+	               RollingFileAppender
+	               LogcatAppender  
+		----------------------------------------------------------------------------------------------------------------
+		<filter>
+		
+		                            
+	    		
+	    参考手册：
+	    http://aub.iteye.com/blog/1896611
+	 
+     -->
